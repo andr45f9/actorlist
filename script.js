@@ -1,6 +1,6 @@
 const container = document.querySelector("section");
 const template = document.querySelector("template").content;
-const url = "file:///Users/andreaschack/Documents/KEA%20MMD/3.semester/actors.json";
+const url = "./actors.json";
 
 /* Hero section */
 let hero = document.createElement("img");
@@ -25,7 +25,7 @@ function show(data) {
     clone.querySelector("h2").textContent = actor.fullname;
     clone.querySelector("h3").textContent = actor.movie;
     clone.querySelector("article").addEventListener("click", () => showDetails(actor));
-    container.appendChild(klon);
+    container.appendChild(clone);
   });
 }
 
@@ -35,6 +35,6 @@ function showDetails(actor) {
   popUp.querySelector("h2").textContent = actor.fullname;
   popUp.querySelector("h3").textContent = actor.movie;
 
-  document.querySelector("#close_button").addEventListener("click", () => (popup.style.display = "none"));
+  document.querySelector("#close_button").addEventListener("click", () => (popUp.style.display = "none"));
 }
 getData();
