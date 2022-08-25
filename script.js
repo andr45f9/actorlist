@@ -8,6 +8,7 @@ hero.src = "actor_banner.svg";
 let block = document.getElementById("hero_section");
 block.appendChild(hero);
 
+/* fetching the data from the json file */
 async function getData() {
   const resspons = await fetch(url);
   const json = await resspons.json();
@@ -17,6 +18,7 @@ async function getData() {
   show(data);
 }
 
+/* The data being showed in our template */
 function show(data) {
   container.textContent = "";
 
@@ -29,6 +31,7 @@ function show(data) {
   });
 }
 
+/* Pop up window */
 function showDetails(actor) {
   console.log(actor);
   popUp.style.display = "block";
